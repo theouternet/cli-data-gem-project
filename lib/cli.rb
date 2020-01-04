@@ -8,8 +8,8 @@ class BestMoviesNearMe::CLI
   
   def start 
     puts ""
-    puts "What caliber of movie would you like to see? Excellent, Good, So-So, Not Good, or Shitty?"
-    input = gets.strip.downcase 
+    puts "What caliber of movie would you like to see? Excellent, Good, So-So, or Shitty?"
+    input = gets.strip.capitalize 
     
     print_movies(input)
     
@@ -38,7 +38,26 @@ class BestMoviesNearMe::CLI
   end 
   end 
   
+  def print_movie(movie)
+    puts ""
+    puts "Title: #{movie.title}"
+    puts ""
+    puts "Synopsis: #{movie.synopsis}"
+    puts ""
+    puts "Metascore: #{movie.metascore}"
+    puts ""
+    puts "Showtimes: #{movie.showtimes}"
+    puts ""
+  end
   
+    def print_movies(caliber)
+    puts ""
+    puts "---- #{caliber} movies ----"
+    puts ""
+    WorldsBestRestaurants::Restaurant.all[from_number-1, 10].each.with_index(from_number) do |restaurant, index|
+      puts "#{index}. #{restaurant.name} - #{restaurant.location}"
+    end
+  end
   
   
 end 
