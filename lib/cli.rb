@@ -54,8 +54,8 @@ class BestMoviesNearMe::CLI
     puts ""
     puts "---- #{caliber} movies ----"
     puts ""
-    WorldsBestRestaurants::Restaurant.all[from_number-1, 10].each.with_index(from_number) do |restaurant, index|
-      puts "#{index}. #{restaurant.name} - #{restaurant.location}"
+    WorldsBestRestaurants::Movie.all[__RANGE OF METASCORES__].each.with_index(__) do |movie, index|
+      puts "#{index}. #{movie.title} - #{movie.metascore}"
     end
   end
   
