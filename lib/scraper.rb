@@ -9,7 +9,7 @@ class BestMoviesNearMe::Scraper
   end
   
   def create_movie
-    scrape_movie_listings_index.each do |m|
+    scrape_movie_listings.each do |m|
       BestMoviesNearMe::Moive.new_from_index_page(m)
     end
   end 
