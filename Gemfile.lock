@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bestmovies (0.1.0)
+    best-movies-near-me (0.2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -34,7 +34,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bestmovies!
+  best-movies-near-me!
   bundler (~> 2.0.1)
   nokogiri
   pry
