@@ -1,11 +1,9 @@
 
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "cli/data/gem/project/version"
+require_relative '.lib/cli/data/gem/project/version'
 
 Gem::Specification.new do |s|
   s.name        = 'bestmovies'
-  s.version     = Cli::Data::Gem::Project::VERSION
+  s.version     = BestMoviesNearMe::VERSION
   s.date        = '2020-01-05'
   s.summary     = "Best Movies Near Me"
   s.description = "Lists Movies That Are Actually Good, Actually Playing Near Me"

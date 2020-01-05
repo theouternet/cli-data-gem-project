@@ -1,6 +1,5 @@
 gem#!/usr/bin/env ruby
 
-require "bundler/setup"
-require_relative "../config/environment"
+require_relative '../lib/best_movies'
 
 BestMoviesNearMe::CLI.new.call
