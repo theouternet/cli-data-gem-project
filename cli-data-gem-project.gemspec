@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.authors     = ["theouternet"]
   s.email       = 'steveholt04@gmail.com'
   s.files       = ["lib/best_movies.rb", "lib/cli.rb", "lib/scraper.rb", "lib/movie.rb", "config/environment.rb"]
-  s.homepage    = 'https://github.com/theouternet/cli-data-gem-project'
+  s.homepage    = 'https://rubygems.org/gems/bestmovies'
   s.license     = 'MIT'
   s.executables << 'bestmovies'
 

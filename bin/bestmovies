@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+gem#!/usr/bin/env ruby
 
 require "bundler/setup"
 require_relative "../config/environment"
