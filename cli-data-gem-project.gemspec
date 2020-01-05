@@ -1,5 +1,5 @@
 
-require_relative '.lib/cli/data/gem/project/version'
+require '.lib/cli/data/gem/project/version'
 
 Gem::Specification.new do |s|
   s.name        = 'bestmovies'
