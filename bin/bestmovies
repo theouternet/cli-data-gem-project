@@ -1,5 +1,0 @@
-gem#!/usr/bin/env ruby
-
-require_relative '../lib/best_movies'
-
-BestMoviesNearMe::CLI.new.call
