@@ -13,27 +13,32 @@ class BestMoviesNearMe::Movie
       )
     end
   
-  def initialize(title=nil, metascore=nil, synopsis=nil, showtimes=nil, qulaity=nil)
+  def initialize(title=nil, metascore=nil, synopsis=nil, showtimes=nil, quality=nil)
     @title = title
     @metascore = metascore.to_i
     @synopsis = synopsis
     @showtimes = showtimes
-    @quality = qual_sorter
+    @quality = quality
+    qual_sorter
     @@all << self
   end
   
   def qual_sorter
     if @metascore >= 86
-    "Excellent"
+    @quality = "Excellent"
     elsif @metascore.between?(70,85)
-    "Good"
+    @quality = "Good"
     elsif @metascore.between?(55,69)
-    "So-So"
+    @quality = "So-So"
     elsif @metascore < 55
-    "Shitty"
+    @quality = "Shitty"
   else 
     "No Metascore Available"
   end
+  end
+  
+  def self.all
+    @@all
   end
     
   def doc 
