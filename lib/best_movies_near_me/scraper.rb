@@ -5,12 +5,13 @@ class BestMoviesNearMe::Scraper
   end 
   
   def scrape_movie_listings
-    self.get_page.css("div.lister-item-image ribbonize a").attribute("href").value
-    end
+    self.get_page.css("div.title a")
+  end
     
     def create_movie
       scrape_movie_listings.each do |m|
-        BestMoviesNearMe::Moive.new_from_index_page(m)
+        BestMoviesNearMe::Movie.new_from_index_page(m)
       end 
     end 
   end
+  
