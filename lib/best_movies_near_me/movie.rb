@@ -23,7 +23,17 @@ class BestMoviesNearMe::Movie
   end
   
   def qual_sorter
-    
+    if @metascore >= 86
+    "Excellent"
+    elsif @metascore >= 70 && < 86
+    "Good"
+    elsif @metascore >= 55 && < 69
+    "So-So"
+    elsif @metascore < 55
+    "Shitty"
+  else 
+    "No Metascore Available"
+  end
   end
     
   def doc 
