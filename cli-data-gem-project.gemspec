@@ -2,7 +2,7 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require '.lib/cli/data/gem/project/version'
+require '.lib/best_movies_near_me/version'
 
 Gem::Specification.new do |s|
   s.name        = 'best-movies-near-me'
