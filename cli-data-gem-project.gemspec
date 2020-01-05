@@ -6,8 +6,8 @@ require "cli/data/gem/project/version"
 Gem::Specification.new do |spec|
   spec.name          = "BestMoviesNearMe"
   spec.version       = Cli::Data::Gem::Project::VERSION
-  spec.authors       = ["'Jeremy R'"]
-  spec.email         = ["'hotdog@juno.com'"]
+  spec.authors       = ["Jeremy R"]
+  spec.email         = ["hotdog@juno.com"]
 
   spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
@@ -23,8 +23,7 @@ Gem::Specification.new do |spec|
     spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
     spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
   else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
+    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
 
   # Specify which files should be added to the gem when it is released.
