@@ -5,7 +5,7 @@ class BestMoviesNearMe::Scraper
   end 
   
   def scrape_movie_listings
-    self.get_page.css("div.title a")
+    self.get_page.css("div.lister-item mode-grid")
   end
     
     def create_movie

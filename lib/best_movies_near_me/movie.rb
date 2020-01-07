@@ -6,20 +6,23 @@ class BestMoviesNearMe::Movie
   
   def self.new_from_index_page(m)
     self.new(
-      m.css("h1.header").text,
-      m.css("span.metascore").text.to_i,
-      m.css("div.outline").text,
-      m.css("div.list detail").text
+      m.css("div.title").text,
+      m.css("span./^metascore/").text.to_i,
+      m.css("p.").text,
+      m.css("div.title a").attribute("href").value,
+      nil
       )
     end
   
-  def initialize(title=nil, metascore=nil, synopsis=nil, showtimes=nil, quality=nil)
+  def initialize(title=nil, metascore=nil, synopsis=nil, detail_page=nil, quality=nil)
     @title = title
     @metascore = metascore.to_i
     @synopsis = synopsis
-    @showtimes = showtimes
+    @detail_page = detail_page
     @quality = quality
+    
     qual_sorter
+    
     @@all << self
   end
   

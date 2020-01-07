@@ -55,10 +55,8 @@ class BestMoviesNearMe::CLI
       puts "---- #{caliber} movies ----"
       puts ""
       
-      caliber_array = BestMoviesNearMe::Movie.all.select {|m| m[:quality] == caliber }
-      caliber_array.each_with_index do |movie, index|
-        puts "#{index+1}). #{movie.title} - #{movie.metascore}"
-      end
+      puts BestMoviesNearMe::Movie.all
+
     end
 
 end 
