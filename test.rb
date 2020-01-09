@@ -21,7 +21,7 @@ class Yeah
   def printer 
     
     puts get_movies.css("div.title a").text
-      get_movies.css("div.ratings-metascore span").text.sub(" ","")
+      get_movies.css("div#user_rating strong").text
       #sub out spaces? DO NOT USE .to_i
       
       get_movies.css("p.").text
