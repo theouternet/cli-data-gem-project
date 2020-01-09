@@ -5,7 +5,7 @@ require 'pry'
 class Yeah
  
  def get_page
- doc = Nokogiri::HTML(open("https://www.imdb.com/showtimes/location?ref_=sh_lc&sort=user_rating,desc"))
+ doc = Nokogiri::HTML(open("https://www.imdb.com/showtimes/location/US/75201?sort=user_rating,desc"))
  
  listing = doc.css("div.smart-popout")
  
@@ -20,7 +20,7 @@ class Yeah
 
   def printer 
     
-    puts get_movies.css("h3.lister-item-header a").text
+    puts get_movies.css("div.title a").text
       get_movies.css("div.ratings-metascore span").text.sub(" ","")
       #sub out spaces? DO NOT USE .to_i
       
