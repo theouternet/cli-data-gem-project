@@ -1,4 +1,4 @@
- require 'nokogiri'
+require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
@@ -7,9 +7,7 @@ class Yeah
  def get_page
  doc = Nokogiri::HTML(open("https://www.imdb.com/showtimes/location?ref_=sh_lc&sort=user_rating,desc"))
  
- listing = doc.css("div.lister-item-image.ribbonize")
- 
- 
+ listing = doc.css("div.smart-popout")
  
   binding.pry
   end 
@@ -22,8 +20,10 @@ class Yeah
 
   def printer 
     
-    puts get_movies.css("div.title a").attribute("href").text
-      get_movies.css("span./^metascore/").text.to_i
+    puts get_movies.css("h3.lister-item-header a").text
+      get_movies.css("div.ratings-metascore span").text.sub(" ","")
+      #sub out spaces? DO NOT USE .to_i
+      
       get_movies.css("p.").text
       get_movies.css("div.title a").attribute("href").value
       
