@@ -1,6 +1,6 @@
 class BestMoviesNearMe::Movie
   
-  attr_accessor :title, :rating, :detail_page, :showtimes, :quality
+  attr_accessor :title, :rating, :detail_page, :showtimes, :quality, :synopsis, :metascore
   
   @@all = [] 
   
@@ -40,6 +40,9 @@ class BestMoviesNearMe::Movie
   def self.all
     @@all
   end
+  
+  def self.find(id)
+    self.all[id-1]
     
   def doc 
     @doc ||= Nokogiri::HTML(open(self.detail_page))
