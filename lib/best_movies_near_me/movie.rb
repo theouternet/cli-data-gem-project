@@ -49,6 +49,9 @@ class BestMoviesNearMe::Movie
   end
   
   def detail_page_attrs
-    @metascore = doc.css("span.metascore")
+    @metascore = doc.css("span.metascore").text.to_i 
+    @synopsis = doc.css("div.outline").text 
+    @showtimes = doc.css("div.list.detail")
+  end 
   
 end

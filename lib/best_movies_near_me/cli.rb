@@ -57,7 +57,7 @@ class BestMoviesNearMe::CLI
       
       BestMoviesNearMe::Movie.all.each_with_index do |m, i|
       if m.quality == caliber
-      puts "#{i}. #{m.title} - IMDB Rating: #{m.rating}"
+      puts "#{i+1}. #{m.title} - IMDB Rating: #{m.rating}"
     end
   end
     end
