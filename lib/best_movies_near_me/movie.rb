@@ -6,18 +6,16 @@ class BestMoviesNearMe::Movie
   
   def self.new_from_index_page(m)
     self.new(
-      m.css("div.title").text,
-      m.css("span./^metascore/").text.to_i,
-      m.css("p.").text,
-      m.css("div.title a").attribute("href").value,
+      m.css("div.title a").text,
+      m.css("div#user_rating strong").text
+      m.css("div.title a").attribute("href").value
       nil
       )
     end
   
-  def initialize(title=nil, metascore=nil, synopsis=nil, detail_page=nil, quality=nil)
+  def initialize(title=nil, rating=nil, detail_page=nil, quality=nil)
     @title = title
-    @metascore = metascore.to_i
-    @synopsis = synopsis
+    @rating = rating.to_i
     @detail_page = detail_page
     @quality = quality
     
@@ -27,13 +25,13 @@ class BestMoviesNearMe::Movie
   end
   
   def qual_sorter
-    if @metascore >= 9
+    if @rating >= 9
     @quality = "Excellent"
-    elsif @metascore.between?(8,8.9)
+    elsif @rating.between?(8,8.9)
     @quality = "Good"
-    elsif @metascore.between?(7,7.9)
+    elsif @rating.between?(7,7.9)
     @quality = "So-So"
-    elsif @metascore < 7
+    elsif @rating < 7
     @quality = "Shitty"
   else 
     "No Metascore Available"
