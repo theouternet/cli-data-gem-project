@@ -43,15 +43,16 @@ class BestMoviesNearMe::Movie
   
   def self.find(id)
     self.all[id-1]
+  end
     
   def doc 
     @doc ||= Nokogiri::HTML(open(self.detail_page))
   end
   
   def detail_page_attrs
-    @metascore = doc.css("span.metascore").text.to_i 
-    @synopsis = doc.css("div.outline").text 
-    @showtimes = doc.css("div.list.detail")
+    @metascore ||= doc.css("span.metascore").text.to_i 
+    @synopsis ||= doc.css("div.outline").text 
+    @showtimes ||= doc.css("div.list.detail")
   end 
   
 end
