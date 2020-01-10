@@ -7,7 +7,7 @@ class Yeah
  def get_page
  doc = Nokogiri::HTML(open("https://www.imdb.com/showtimes/location/US/75201?sort=user_rating,desc"))
  
- listing = doc.css("div.lister-item")
+ listing = doc.css("div.lister-list")
  
   binding.pry
   end 
