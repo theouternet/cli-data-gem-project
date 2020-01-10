@@ -21,7 +21,26 @@ moviez = []
   moviez
   end
   
-
+  
+  def scrape_profile_page
+  
+  html = open(profile_url)______
+  profilepage = Nokogiri::HTML(html)______
+  #fix these 2 lines
+    
+      profiledeets = {}
+      
+      profilepage.css("div.social-icon-container a").each do |icon|
+        if icon.attribute("href").value.include?("twitter")
+          profiledeets[:twitter] = icon.attribute("href").value 
+      elsif icon.attribute("href").value.include?("github")
+          profiledeets[:github] = icon.attribute("href").value 
+      elsif icon.attribute("href").value.include?("linkedin")
+          profiledeets[:linkedin] = icon.attribute("href").value
+      else 
+        profiledeets[:blog] = icon.attribute("href").value
+    end
+  end
   
   
  puts get_page

@@ -1,11 +1,11 @@
 class BestMoviesNearMe::Scraper 
   
   def get_page
-    Nokogiri::HTML(open("https://www.imdb.com/showtimes/location?ref_=sh_lc&sort=user_rating,desc"))
+    Nokogiri::HTML(open("https://www.imdb.com/showtimes/location/US/75201?sort=user_rating,desc"))
   end 
   
   def scrape_movie_listings
-    self.get_page.css("div.lister-item mode-grid")
+    self.get_page.css("div.lister-item")
   end
     
     def create_movie
