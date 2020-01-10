@@ -55,8 +55,11 @@ class BestMoviesNearMe::CLI
       puts "---- #{caliber} movies ----"
       puts ""
       
-      puts BestMoviesNearMe::Movie.all
-
+      BestMoviesNearMe::Movie.all.each_with_index do |m, i|
+      if m.quality == caliber
+      puts "#{i}. #{m.title} - IMDB Rating: #{m.rating}"
+    end
+  end
     end
 
 end 

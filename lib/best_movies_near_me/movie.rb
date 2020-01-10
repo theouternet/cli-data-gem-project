@@ -1,21 +1,20 @@
 class BestMoviesNearMe::Movie
   
-  attr_accessor :title, :metascore, :synopsis, :showtimes, :quality
+  attr_accessor :title, :rating, :detail_page, :showtimes, :quality
   
   @@all = [] 
   
   def self.new_from_index_page(m)
     self.new(
       m.css("div.title a").text,
-      m.css("div#user_rating strong").text
-      m.css("div.title a").attribute("href").value
-      nil
-      )
+      m.css("div#user_rating strong").text.to_i,
+      m.css("div.title a").attribute("href").value,
+      nil)
     end
   
   def initialize(title=nil, rating=nil, detail_page=nil, quality=nil)
     @title = title
-    @rating = rating.to_i
+    @rating = rating
     @detail_page = detail_page
     @quality = quality
     
