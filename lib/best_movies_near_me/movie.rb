@@ -8,8 +8,9 @@ class BestMoviesNearMe::Movie
     self.new(
       m.css("div.title a").text,
       m.css("div#user_rating strong").text.to_i,
-      "https://www.imdb.com#{m.css("div.title a").attribute("href").value}",
-      nil)
+      "https://www.imdb.com#{m.css("div.title a").attribute("href").text}",
+      nil
+      )
     end
   
   def initialize(title=nil, rating=nil, detail_page=nil, quality=nil)
@@ -49,10 +50,17 @@ class BestMoviesNearMe::Movie
     @doc ||= Nokogiri::HTML(open(self.detail_page))
   end
   
-  def detail_page_attrs
-    @metascore ||= doc.css("span.metascore").text.to_i 
-    @synopsis ||= doc.css("div.outline").text 
-    @showtimes ||= doc.css("div.list.detail")
-  end 
+  def metascore
+    @metascore ||= doc.css("span.metascore").text.to_i
+  end
+  
+  def synopsis
+    @synopsis ||= doc.css("div.outline").text
+  end
+  
+  def showtimes
+    @showtimes ||= doc.css("div.list.detail").text
+  end
+ 
   
 end
