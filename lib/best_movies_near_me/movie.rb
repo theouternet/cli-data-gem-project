@@ -42,7 +42,10 @@ class BestMoviesNearMe::Movie
   end
     
   def doc 
-    @doc ||= Nokogiri::HTML(open(self.url))
+    @doc ||= Nokogiri::HTML(open(self.detail_page))
   end
+  
+  def detail_page_attrs
+    @metascore = doc.css("span.metascore")
   
 end

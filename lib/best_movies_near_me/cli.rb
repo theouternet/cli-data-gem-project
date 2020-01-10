@@ -14,7 +14,7 @@ class BestMoviesNearMe::CLI
     print_movies(input)
     
     puts ""
-    puts "Which movie would you like more info on?"
+    puts "Which movie would you like more info on? Type in its number:"
     input = gets.strip
   
   movie = BestMoviesNearMe::Movie.find(input.to_i)
