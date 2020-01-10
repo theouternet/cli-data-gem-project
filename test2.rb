@@ -1,10 +1,8 @@
 require 'nokogiri'
 require 'open-uri'
 require 'pry'
-
-class Yeah
  
- def self.get_page
+ def get_page
  doc = Nokogiri::HTML(open("https://www.imdb.com/showtimes/location/US/75201?sort=user_rating,desc"))
  
 moviez = []
@@ -23,6 +21,7 @@ moviez = []
   moviez
   end
   
-  end
+
   
-  Yeah.new.get_page
+  
+ puts get_page
