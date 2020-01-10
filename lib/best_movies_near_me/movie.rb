@@ -8,7 +8,7 @@ class BestMoviesNearMe::Movie
     self.new(
       m.css("div.title a").text,
       m.css("div#user_rating strong").text.to_i,
-      m.css("div.title a").attribute("href").value,
+      "https://www.imdb.com#{m.css("div.title a").attribute("href").value}",
       nil)
     end
   
