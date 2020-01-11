@@ -1,9 +1,14 @@
 class BestMoviesNearMe::CLI 
   
   def call 
-    BestMoviesNearMe::Scraper.new.create_movie
-    puts "Welcome to GoodMovieFinder, where we cut out the bullshit and fake reviews to find *actual* quality movies *actually* playing near you."
+    
+    puts ""
+    puts "Welcome to GoodMovieFinder, where we cut out the bullshit and fake reviews to find *actual* quality movies *actually* playing near you. Please stand by..."
+    
+        BestMoviesNearMe::Scraper.new.create_movie
+
     start 
+    
   end 
   
   def start 
@@ -51,15 +56,25 @@ class BestMoviesNearMe::CLI
   end
   
     def print_movies(caliber)
+     
+      if BestMoviesNearMe::Movie.all.find {|m| m.quality == caliber}
+     
       puts ""
       puts "---- #{caliber} movies ----"
       puts ""
-      
       BestMoviesNearMe::Movie.all.each_with_index do |m, i|
       if m.quality == caliber
       puts "#{i+1}. #{m.title} - Metascore: #{m.metascoree}"
     end
+  end 
+  
+    else
+    puts ""
+    puts "No movies in that category are showing near you."
+    puts ""
+    start
   end
-    end
+  
+  end
 
 end 
