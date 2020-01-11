@@ -8,7 +8,7 @@ class BestMoviesNearMe::Movie
     self.new(
       m.css("div.title a").text,
       m.css("div#user_rating strong").text.to_i,
-      "https://www.imdb.com#{m.css("div.title a").attribute("href").text}",
+      "https://www.imdb.com#{m.css("div.title a").attribute("href").text}/us/75201",
       nil
       )
     end
@@ -19,19 +19,21 @@ class BestMoviesNearMe::Movie
     @detail_page = detail_page
     @quality = quality
     
+    metascoree
+    
     qual_sorter
     
     @@all << self
   end
   
   def qual_sorter
-    if @rating >= 9
+    if @metascore >= 86
     @quality = "Excellent"
-    elsif @rating.between?(8,8.9)
+    elsif @metascore.between?(70,85)
     @quality = "Good"
-    elsif @rating.between?(7,7.9)
+    elsif @metascore.between?(55,69)
     @quality = "So-So"
-    elsif @rating < 7
+    elsif @metascore < 55
     @quality = "Shitty"
   else 
     "No Metascore Available"
@@ -50,7 +52,7 @@ class BestMoviesNearMe::Movie
     @doc ||= Nokogiri::HTML(open(self.detail_page))
   end
   
-  def metascore
+  def metascoree
     @metascore ||= doc.css("span.metascore").text.to_i
   end
   

@@ -44,7 +44,7 @@ class BestMoviesNearMe::CLI
     puts ""
     puts "Synopsis: #{movie.synopsis}"
     puts ""
-    puts "Metascore: #{movie.metascore}"
+    puts "Metascore: #{movie.metascoree}"
     puts ""
     puts "Showtimes: #{movie.showtimes}"
     puts ""
@@ -57,7 +57,7 @@ class BestMoviesNearMe::CLI
       
       BestMoviesNearMe::Movie.all.each_with_index do |m, i|
       if m.quality == caliber
-      puts "#{i+1}. #{m.title} - IMDB Rating: #{m.rating}"
+      puts "#{i+1}. #{m.title} - Metascore: #{m.metascoree}"
     end
   end
     end
