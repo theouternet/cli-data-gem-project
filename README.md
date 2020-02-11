@@ -1,28 +1,20 @@
-# Cli::Data::Gem::Project
+# Best::Movies::Near::Me
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cli/data/gem/project`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to MY new gem! Structure influenced by Worlds Best Restaurants. Problem influenced by me.
 
-TODO: Delete this and the text above, and describe your gem
+Find the best movies actually playing near you listed by Metascore, the only film metric worth considering.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'cli-data-gem-project'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install cli-data-gem-project
+    $ gem install best-movies-near-me
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the following and follow the on-screen prompts: 
+
+$ cd cli-data-gem-project
+$ bundle install
+$ ruby bin/best-movies-near-me
 
 ## Development
 
