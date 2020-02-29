@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.executables << 'best-movies-near-me'
 
   s.add_development_dependency "bundler", "~> 2.0.1"
-  s.add_development_dependency "rake", "~> 10.0"
+  s.add_development_dependency "rake", "~> 12.3"
   s.add_development_dependency "rspec", ">= 0"
   s.add_development_dependency "nokogiri", ">= 0"
   s.add_development_dependency "pry", ">= 0"
