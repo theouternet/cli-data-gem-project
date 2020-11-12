@@ -3,7 +3,7 @@ class BestMoviesNearMe::CLI
   def call 
     
     puts ""
-    puts "Welcome to GoodMovieFinder, where we cut out the bullshit and fake reviews to find *actual* quality movies *actually* playing near you. Please stand by..."
+    puts "Welcome to GoodMovieFinder, where we cut out the b.s. and fake reviews to find *actual* quality movies *actually* playing near you. Please stand by..."
     
         BestMoviesNearMe::Scraper.new.create_movie
 
@@ -13,7 +13,7 @@ class BestMoviesNearMe::CLI
   
   def start 
     puts ""
-    puts "What caliber of movie would you like to see? Excellent, Good, So-So, or Shitty?"
+    puts "What caliber of movie would you like to see? Excellent, Good, So-So, or Terrible?"
     input = gets.strip.capitalize 
     
     print_movies(input)
