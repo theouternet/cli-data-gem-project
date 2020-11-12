@@ -34,7 +34,7 @@ class BestMoviesNearMe::Movie
     elsif @metascore.between?(55,69)
     @quality = "So-So"
     elsif @metascore < 55
-    @quality = "Shitty"
+    @quality = "Terrible"
   else 
     "No Metascore Available"
   end
