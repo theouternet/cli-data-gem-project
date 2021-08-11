@@ -30,7 +30,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/'victo
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+Open to use but not open source for now, thanks.
 
 ## Code of Conduct
 
